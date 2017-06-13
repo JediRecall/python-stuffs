@@ -12,4 +12,5 @@ Keep track of how many guesses the user has taken, and when the game ends, print
 
 """
 
+print "hello"
 
