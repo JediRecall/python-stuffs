@@ -6,35 +6,70 @@
 # Part I
 
 def divisors(num):
+    ans_list = []
+    for n in range (1,num+1):
+        #print "num =", num, "n =" , n
+        if num % n == 0:
+            #print "is divisor"
+            ans_list.append (n)
+
+    return ans_list
+
+
     """
     Takes a number and returns all divisors of the number, ordered least to greatest
     :param num: int
     :return: list (int)
     """
-    return 0
 
-def prime(num):
+
+
+def prime(num2):
+    prime_list = divisors(num2)
+    print prime_list
+    if len(prime_list)> 2:
+        return False
+    else:
+        return True
+       # print "num =", num2, "n =", n
+
+
+
     """
     Takes a number and returns True if the number is prime, otherwise False
     :param num: int
     :return: bool
     """
-    return False
+
 
 # Part II
 
 def intersection(lst1, lst2):
-    """
+    newList=[]
+    for number in lst1:
+        if number in lst2:
+            newList.append(number)
+
+    print newList
+
+
+    return newList
+
+
+
+"""
     Takes two lists and returns a list of the elements in common between the lists
     :param lst1: list, any type
     :param lst2: list, any type
     :return: list, any type
-    """
-    return ["test"]
+    ""return ["test"]"""
 
 # Part III
 
 def find_ab(side1, side2, side3):
+    newlist= []
+    newlist.append (side1,side2,side3)
+
     """
     Takes three side lengths an returns two smallest in a list
     :param side1: int or float
@@ -63,14 +98,20 @@ def square(side):
     return 0
 
 def pythagorean(a,b,c):
-    """
+    if 3**2 + 4**2  == 5**2:
+        return True
+
+
+
+
+"""
     Takes three side lengths and returns true if a^2 + b^2 = c^2, otherwise false
     :param a: int or float
     :param b: int or float
     :param c: int or float
     :return: bool
     """
-    return False
+
 
 def is_right(side1, side2, side3):
     """
@@ -166,3 +207,6 @@ if is_right(9, 3, 4):
     print("Test 12: FAIL")
 else:
     print("Test 12: PASS")
+
+meme = "meme"
+print meme
