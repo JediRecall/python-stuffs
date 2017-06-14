@@ -48,7 +48,7 @@ wordlist = load_words()
 # your code begins here!
 def hangman():
     word = choose_word(wordlist)
-    print word
+    #print word
     list2 = []
     list3 = []
     n = len(word)
@@ -56,8 +56,14 @@ def hangman():
         list2.append ("_")
         list3.append (ltr)
     print list2
-    g = 6
-    while g > 0:
+    head = " O"
+    torso = "/|]"
+    legs = " /\ "
+    print head
+    print torso
+    print legs
+    g = 7
+    while g > 1:
         g = (g-1)
         print "you have"
         print g
@@ -68,6 +74,9 @@ def hangman():
             continue
         if usript1 in word:
             print "you guessededed correct!"
+            print head
+            print torso
+            print legs
             g = (g+1)
             for num in range (len(word)):
                 if usript1 == word[num]:
@@ -79,8 +88,48 @@ def hangman():
             print list2
         else:
             print "Wrong! try aganz"
-            if g == -1:
-                print "you're all out of guesses"
-                break
+            if g == 6:
+                legs = " \ "
+                print head
+                print torso
+                print legs
+            if g == 5:
+                legs = " "
+                print head
+                print torso
+                print legs
+            if g == 4:
+                torso = " |]"
+                legs = " "
+                print head
+                print torso
+                print legs
+            if g == 3:
+                torso = " | "
+                legs = " "
+                print head
+                print torso
+                print legs
+            if g == 2:
+                torso = " "
+                legs = " "
+                print head
+                print torso
+                print legs
+            if g == 1:
+                head = " X"
+                torso = "XXX"
+                legs = "XX"
+                print head
+                print torso
+                print legs
+                print "you loose."
+
+
+
+
+
+
+
 
 hangman()
